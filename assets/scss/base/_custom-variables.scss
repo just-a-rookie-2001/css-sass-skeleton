@@ -1,0 +1,22 @@
+$grid-columns:      12;
+$grid-gutter-width: 20px !default;
+
+$grid-breakpoints: (
+	// Extra small screen / phone
+	xs: 0,
+	// Small screen / phone
+	sm: 768px,
+	// Medium screen / tablet
+	md: 1024px,
+	// Large screen / desktop
+	lg: 1024px,
+	// Extra large screen / wide desktop
+	xl: 1200px
+	);
+
+$container-max-widths: (
+	sm: 100%,
+	md: 100%,
+	lg: 100%,	
+	xl: 1230px
+	)

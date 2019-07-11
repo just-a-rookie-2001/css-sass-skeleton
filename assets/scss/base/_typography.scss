@@ -1,0 +1,162 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    a {
+        // color: inherit;
+    }
+}
+
+h1 {
+    @include rem-fallback(font-size, 44);
+    @include rem-fallback(line-height, 47);
+    // font-family: $nunitosans-extrabold;
+}
+
+h2 {
+    @include rem-fallback(font-size, 50);
+    @include rem-fallback(line-height, 56);
+    // font-family: $nunitosans-extrabold;
+    @include bp(lg-max) {
+        @include rem-fallback(font-size, 44);
+        @include rem-fallback(line-height, 50);
+    }
+    @include bp(xs-max) {
+        @include rem-fallback(font-size, 34);
+        @include rem-fallback(line-height, 40);
+    }
+    @include bp(xxs-max) {
+        @include rem-fallback(font-size, 30);
+        @include rem-fallback(line-height, 36);
+    }
+}
+
+h3 {
+    @include rem-fallback(font-size, 28);
+    @include rem-fallback(line-height, 33);
+    // font-family: $nunitosans-bold;
+}
+
+h4 {
+    @include rem-fallback(font-size, 24);
+    @include rem-fallback(line-height, 27);
+    // font-family: $nunitosans-bold;
+    margin-bottom: 25px;
+}
+
+h5 {
+    @include rem-fallback(font-size, 20);
+    @include rem-fallback(line-height, 27);
+    margin-bottom: 25px;
+    // font-family: $nunitosans-bold;
+}
+
+h6 {
+    @include rem-fallback(font-size, 18);
+    @include rem-fallback(line-height, 25);
+    // font-family: $nunitosans-bold;
+}
+
+p {
+    @include rem-fallback(font-size, 18);
+    @include rem-fallback(line-height, 25);
+    margin-bottom: 25px;
+    // font-family: $nunitosans-regular;
+    strong,
+    b {
+        // font-family: $nunitosans-bold;
+    }
+    em,
+    i {
+        font-style: italic;
+    }
+    a {
+        // color: inherit;
+        // font-family: $nunitosans-bold;
+        &:hover {
+            // color: $color11;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    li {
+        // color: $black;
+        @include rem-fallback(font-size, 18);
+        @include rem-fallback(line-height, 25);
+        margin-bottom: 5px;
+        // font-family: $nunitosans-bold;
+        a {
+            // font-family: $nunitosans-bold;
+            // color: inherit;
+            &:hover {
+                // color: $color11;
+            }
+        }
+    }
+}
+
+.redirect-link-listing {
+    li {
+        @include rem-fallback(font-size, 20);
+        @include rem-fallback(line-height, 27);
+        margin-bottom: 7px;
+        a {
+            // font-family: $nunitosans-bold;
+            // color: $color3;
+            &:hover {
+                // color: $color11;
+            }
+        }
+    }
+}
+
+.redirect-link-listing {
+    &.green {
+        li {
+            a {
+                // color: $color5;
+                &:hover {
+                    // color: $color11;
+                }
+            }
+        }
+    }
+}
+
+.back-to-link {
+    // color: $color1;
+    @include rem-fallback(font-size, 18);
+    @include rem-fallback(line-height, 25);
+    margin-bottom: 15px;
+    letter-spacing: -0.3px;
+    display: inline-block;
+    // font-family: $nunitosans-bold;
+    span {
+        margin-right: 13px;
+    }
+    &:hover {
+        // color: $color11;
+    }
+}
+
+.mrb-5 {
+    margin-bottom: 5px;
+}

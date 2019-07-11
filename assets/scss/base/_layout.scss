@@ -1,0 +1,125 @@
+::-moz-selection {
+  color: $white;
+  background: $black;
+}
+
+::selection {
+  color: $white;
+  background: $black;
+  background-image: none;
+  -webkit-text-fill-color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  @include rem-fallback(font-size, 18);
+  @include rem-fallback(line-height, 25);
+  overflow-x: hidden;
+  height: 100%;
+  font-weight: normal;
+//   font-family: $nunitosans-regular;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.menu_open {
+  overflow: hidden;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+button {
+  border: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.btn:focus,
+.btn.focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-link:focus,
+.btn-link:hover {
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: 7px;
+}
+
+
+a {
+  @include transition(all 0.3s);
+  font-weight: normal;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  outline: none;
+  text-decoration: none;
+  @include transition(all 0.3s);
+}
+
+a {
+  img {
+    &.normal {
+      display: inline-block;
+    }
+    &.rollover {
+      display: none;
+    }
+  }
+  &:hover {
+    img {
+      &.normal {
+        display: none;
+      }
+      &.rollover {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* General 
+-----------*/
+
+.container {
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.small-container {
+  max-width: 800px;
+}

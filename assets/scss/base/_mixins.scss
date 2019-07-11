@@ -1,0 +1,128 @@
+@mixin translate($transformX, $transformY) {
+    -moz-transform: translate($transformX, $transformY);
+    -o-transform: translate($transformX, $transformY);
+    -ms-transform: translate($transformX, $transformY);
+    -webkit-transform: translate($transformX, $transformY);
+    transform: translate($transformX, $transformY);
+}
+
+@mixin rotate($rotate) {
+    -moz-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+@mixin translateY($translateY) {
+    -moz-transform: translateY($translateY);
+    -o-transform: translateY($translateY);
+    -ms-transform: translateY($translateY);
+    -webkit-transform: translateY($translateY);
+    transform: translateY($translateY);
+}
+
+@mixin translateX($translateX) {
+    -moz-transform: translateX($translateX);
+    -o-transform: translateX($translateX);
+    -ms-transform: translateX($translateX);
+    -webkit-transform: translateX($translateX);
+    transform: translateX($translateX);
+}
+
+@mixin translateZ($translateZ) {
+    -moz-transform: translateZ($translateZ);
+    -o-transform: translateZ($translateZ);
+    -ms-transform: translateZ($translateZ);
+    -webkit-transform: translateZ($translateZ);
+    transform: translateZ($translateZ);
+}
+
+@mixin scale($scale) {
+    -moz-transform: scale($scale);
+    -o-transform: scale($scale);
+    -ms-transform: scale($scale);
+    -webkit-transform: scale($scale);
+    transform: scale($scale);
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+}
+
+@mixin grayscale($filter) {
+    filter: grayscale($filter);
+    -webkit-filter: grayscale($filter);
+    -moz-filter: grayscale($filter);
+    -o-filter: grayscale($filter);
+    -ms-filter: grayscale($filter);
+}
+
+//placeholder
+@mixin placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+//Border Radius
+@mixin border-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@function strip-unit($num) {
+    @return $num / 10;
+}
+
+@mixin rem-fallback($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*16}px;
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+    //#{$property}: $pxValues; 
+    #{$property}: $remValues;
+}
+
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin css3-gradient($property, $value) {
+    #{$property}: -moz-#{$value};
+    #{$property}: -ms-#{$value};
+    #{$property}: -o-#{$value};
+    #{$property}: #{$value};
+}
